@@ -2,6 +2,7 @@ const Manager = require('./lib/Manager')
 const Intern = require('./lib/Intern')
 const Engineer = require('./lib/Engineer')
 const inquirer = require('inquirer')
+const createTeam = require('./src/template.js')
 
 const fs = require('fs')
 
@@ -42,28 +43,6 @@ function managerData() {
         })
 }
 
-function teamData() {
-    inquirer.prompt([
-        {
-            type: "list",
-            name: "mainQuestion",
-            message: "What would you like to do next?",
-            choices: ["Build Engineer", "Build Intern", "Create Team"]
-        }
-    ]).then(answer => {
-        switch (answer.mainQuestion) {
-            case "Build Engineer":
-                engineerData()
-                break;
-            case "Build Intern":
-                internData()
-                break;
-            default:
-                buildTeam()
-        }
-    })
-}
-
 function engineerData() {
     inquirer.prompt([
         {
@@ -97,39 +76,61 @@ function engineerData() {
 }
 
 function internData() {
-        inquirer.prompt([
-            {
-                type: "input",
-                name: 'internName',
-                message: 'what is your interns name?'
-            },
-            {
-                type: "input",
-                name: 'internId',
-                message: 'what is your interns id?'
-            },
-            {
-                type: "input",
-                name: 'internEmail',
-                message: 'what is your interns email?'
-            },
-            {
-                type: "input",
-                name: 'internSchool',
-                message: 'what school is the intern attending?'
-            },
-    
-        ])
-            .then(answers => {
-                const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internGithub)
-                team.push(intern)
-                console.log(team)
-                teamData()
-            })
-    }
+    inquirer.prompt([
+        {
+            type: "input",
+            name: 'internName',
+            message: 'what is your interns name?'
+        },
+        {
+            type: "input",
+            name: 'internId',
+            message: 'what is your interns id?'
+        },
+        {
+            type: "input",
+            name: 'internEmail',
+            message: 'what is your interns email?'
+        },
+        {
+            type: "input",
+            name: 'internSchool',
+            message: 'what school is the intern attending?'
+        },
+
+    ])
+        .then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internGithub)
+            team.push(intern)
+            console.log(team)
+            teamData()
+        })
+}
+
+function teamData() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "mainQuestion",
+            message: "What would you like to do next?",
+            choices: ["Build Engineer", "Build Intern", "Create Team"]
+        }
+    ]).then(answer => {
+        switch (answer.mainQuestion) {
+            case "Build Engineer":
+                engineerData()
+                break;
+            case "Build Intern":
+                internData()
+                break;
+            default:
+                buildTeam()
+        }
+    })
+}
 
 function buildTeam() {
-    fs.writeFile('team.html', createTeam(team), (err) => {
+    fs.writeFile('dist/team.html', createTeam(team), (err) => {
         if (err) throw err;
         console.log("Team has been built!")
     })
