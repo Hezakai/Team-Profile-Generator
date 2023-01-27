@@ -53,12 +53,12 @@ function engineerData() {
         {
             type: "input",
             name: 'engineerId',
-            message: 'what is your managers id?'
+            message: 'what is your engineers id?'
         },
         {
             type: "input",
             name: 'engineerEmail',
-            message: 'what is your managers email?'
+            message: 'what is your engineers email?'
         },
         {
             type: "input",

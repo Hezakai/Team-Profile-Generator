@@ -36,7 +36,7 @@ function createTeamCards(team) {
             </div>
             <ul class="list-group p-3">
                 <li class="list-group-item">${emp.getId()}</li>
-                <li class="list-group-item">e-mail: <a href="#" class="card-link">${emp.getEmail()}</a></li>
+                <li class="list-group-item">e-mail: <a href="mailto:${emp.getEmail()}" class="card-link">${emp.getEmail()}</a></li>
                 <li class="list-group-item">Office Number: ${emp.getOfficeNumber()}</li>
             </ul>
         </div>`
@@ -48,8 +48,8 @@ function createTeamCards(team) {
             </div>
             <ul class="list-group p-3">
                 <li class="list-group-item">${emp.getId()}</li>
-                <li class="list-group-item">e-mail: <a href="#" class="card-link">${emp.getEmail()}</a></li>
-                <li class="list-group-item">Office Number: ${emp.getGithub()}</li>
+                <li class="list-group-item">e-mail: <a href="mailto:${emp.getEmail()}" class="card-link">${emp.getEmail()}</a></li>
+                <li class="list-group-item">e-mail: <a href="https://github.com/${emp.getGithub()}" target="_blank" class="card-link">${emp.getGithub()}</a></li>
             </ul>
         </div>`
         }
@@ -60,7 +60,7 @@ function createTeamCards(team) {
             </div>
             <ul class="list-group p-3">
                 <li class="list-group-item">${emp.getId()}</li>
-                <li class="list-group-item">e-mail: <a href="#" class="card-link">${emp.getEmail()}</a></li>
+                <li class="list-group-item">e-mail: <a href="mailto:${emp.getEmail()}" class="card-link">${emp.getEmail()}</a></li>
                 <li class="list-group-item">Office Number: ${emp.getSchool()}</li>
             </ul>
             </div>`
