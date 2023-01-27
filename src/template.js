@@ -27,16 +27,44 @@ module.exports = (team) => {
 }
 
 function createTeamCards(team) {
-    console.log(team)
-    //testing template
-    return `<div class="card col-2 border-light shadow-lg mx-2 my-2">
-    <div class="h2 card-header bg-primary font-weight-bold text-white">
-    ${team[0].getName()}<br>${team[0].getRole()}
-    </div>
-    <ul class="list-group p-3">
-        <li class="list-group-item">${team[0].getId()}</li>
-        <li class="list-group-item">e-mail: <a href="#" class="card-link">${team[0].getEmail()}</a></li>
-        <li class="list-group-item">Office Number: ${team[0].getOfficeNumber()}</li>
-    </ul>
-</div>`
+    let cardsHTML = "";
+    team.forEach(emp => {
+        if (emp.constructor.name === "Manager") {
+            cardsHTML += `<div class="card col-2 border-light shadow-lg mx-2 my-2">
+            <div class="h2 card-header bg-primary font-weight-bold text-white">
+            ${emp.getName()}<br>${emp.getRole()}
+            </div>
+            <ul class="list-group p-3">
+                <li class="list-group-item">${emp.getId()}</li>
+                <li class="list-group-item">e-mail: <a href="#" class="card-link">${emp.getEmail()}</a></li>
+                <li class="list-group-item">Office Number: ${emp.getOfficeNumber()}</li>
+            </ul>
+        </div>`
+        }
+        if (emp.constructor.name === "Engineer") {
+            cardsHTML += `<div class="card col-2 border-light shadow-lg mx-2 my-2">
+            <div class="h2 card-header bg-primary font-weight-bold text-white">
+            ${emp.getName()}<br>${emp.getRole()}
+            </div>
+            <ul class="list-group p-3">
+                <li class="list-group-item">${emp.getId()}</li>
+                <li class="list-group-item">e-mail: <a href="#" class="card-link">${emp.getEmail()}</a></li>
+                <li class="list-group-item">Office Number: ${emp.getGithub()}</li>
+            </ul>
+        </div>`
+        }
+        if (emp.constructor.name === "Intern") {
+            cardsHTML += `<div class="card col-2 border-light shadow-lg mx-2 my-2">
+            <div class="h2 card-header bg-primary font-weight-bold text-white">
+            ${emp.getName()}<br>${emp.getRole()}
+            </div>
+            <ul class="list-group p-3">
+                <li class="list-group-item">${emp.getId()}</li>
+                <li class="list-group-item">e-mail: <a href="#" class="card-link">${emp.getEmail()}</a></li>
+                <li class="list-group-item">Office Number: ${emp.getSchool()}</li>
+            </ul>
+            </div>`
+        }
+    })
+    return cardsHTML;
 }
