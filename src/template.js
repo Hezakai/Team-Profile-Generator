@@ -63,7 +63,7 @@ function createTeamCards(team) {
             <ul class="list-group p-3">
                 <li class="list-group-item">${emp.getId()}</li>
                 <li class="list-group-item">e-mail: <a href="mailto:${emp.getEmail()}" class="card-link">${emp.getEmail()}</a></li>
-                <li class="list-group-item">Office Number: ${emp.getSchool()}</li>
+                <li class="list-group-item">School: ${emp.getSchool()}</li>
             </ul>
             </div>`
         }

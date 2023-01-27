@@ -100,7 +100,7 @@ function internData() {
 
     ])
         .then(answers => {
-            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internGithub)
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool)
             team.push(intern)
             teamData()
         })

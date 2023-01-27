@@ -11,6 +11,18 @@ test('get constructor name value', () => {
     expect(emp.name).toBe(name)
 })
 
+test('get constructor name value', () => {
+    const id = "Michael Scott"
+    const emp = new Employee("waqefdqwaedf",id)
+    expect(emp.id).toBe(id)
+})
+
+test('get constructor name value', () => {
+    const email = "test@email.com"
+    const emp = new Employee("waqefdqwaedf", 123,email)
+    expect(emp.email).toBe(email)
+})
+
 test('get name value form method', () => {
     const name = "Michael Scott"
     const emp = new Employee(name)
