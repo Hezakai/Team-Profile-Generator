@@ -12,7 +12,7 @@ Type "node index.js" to run the app.  Answer all of the questions and the "team.
 The full repo is located at: https://github.com/Hezakai/Team-Profile-Generator
 
 ### Demo Video
-You can view the demo [here](https://drive.google.com/file/d/13sOKLwti2vx2yHhps-nA6Hj-8LjIsWJt/view)
+You can view the demo [here](https://drive.google.com/file/d/12iyU4yoz-Um6eXlHYZYTRxfgXflp6JZC/view)
 
 ### Demo HTML file
 You can view the HTML file created in the demo [here](./dist/team.html)
