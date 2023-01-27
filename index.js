@@ -9,7 +9,7 @@ const fs = require('fs')
 const team = []
 
 managerData()
-
+//builds the manager data > adds to team array > exits to teamData NOTE:1 manger is required for all teams
 function managerData() {
     inquirer.prompt([
         {
@@ -37,12 +37,12 @@ function managerData() {
         .then(answers => {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber)
             team.push(manager)
-            console.log(team)
             teamData()
 
         })
 }
 
+//builds the engineer data > adds to team array > exits to teamData
 function engineerData() {
     inquirer.prompt([
         {
@@ -70,11 +70,11 @@ function engineerData() {
         .then(answers => {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
             team.push(engineer)
-            console.log(team)
             teamData()
         })
 }
 
+//builds the intern data > adds to team array > exits to teamData
 function internData() {
     inquirer.prompt([
         {
@@ -102,11 +102,11 @@ function internData() {
         .then(answers => {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internGithub)
             team.push(intern)
-            console.log(team)
             teamData()
         })
 }
 
+//queries user to add more team memebers or build team
 function teamData() {
     inquirer.prompt([
         {
@@ -129,6 +129,7 @@ function teamData() {
     })
 }
 
+//builds the team.html file with the createTeam function from template.js
 function buildTeam() {
     fs.writeFile('dist/team.html', createTeam(team), (err) => {
         if (err) throw err;

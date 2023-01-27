@@ -1,5 +1,6 @@
 const index = require('../index')
 
+//starter HTML where card HTML is added before being written to team.html
 module.exports = (team) => {
     return `
     <!DOCTYPE html>
@@ -26,6 +27,7 @@ module.exports = (team) => {
     `
 }
 
+//loops through the team array built by index.js returning the appropriate card based on role name
 function createTeamCards(team) {
     let cardsHTML = "";
     team.forEach(emp => {
