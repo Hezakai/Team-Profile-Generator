@@ -15,4 +15,4 @@ The full repo is located at: https://github.com/Hezakai/Team-Profile-Generator
 You can view the demo [here](https://drive.google.com/file/d/13sOKLwti2vx2yHhps-nA6Hj-8LjIsWJt/view)
 
 ### Demo HTML file
-You can view the README created in the demo [here](./dist/team.html)
+You can view the HTML file created in the demo [here](./dist/team.html)
